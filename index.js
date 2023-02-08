@@ -19,8 +19,8 @@ async function fillOutStartWebsiteProjectForm() {
   await closeSurveyButton[0].click();
   await page.waitForTimeout(2000);
 
-  const startWebsiteProjectButton = await page.$x('//*[@id="cf4e08db-7f9f-5167-82b6-fe300086a9a2"]/nav/div/div/div[2]');
-  await startWebsiteProjectButton[1].click();
+  const startWebsiteButton = await page.$x('//*[@id="76c00e62-f6cc-5450-9667-dfaf9604c3b0"]');
+  await startWebsiteButton[3].click();
   await page.waitForTimeout(3000);
 
   await page.type('#mui-17', 'Lali');
@@ -28,11 +28,11 @@ async function fillOutStartWebsiteProjectForm() {
   await page.type('#mui-19', 'lali@hi.com');
   await page.type('#mui-20', '8286371937')
 
-  const budgetDropdown = await page.$x('//*[@id="mui-component-select-estimated_website_project_budget"]');
-  await budgetDropdown[3].click();
+  const helpWithdropdown = await page.$x('//*[@id="mui-component-select-solutions"]');
+  await helpWithdropdown[3].click();
   await page.waitForTimeout(1000);
-  const selectBudget = await page.$x('//*[@id="menu-estimated_website_project_budget"]/div[3]/ul/li[1]');
-  await selectBudget[0].click();
+  const selectWebDevelopment = await page.$x('//*[@id="menu-solutions"]/div[3]/ul/li[1]');
+  await selectWebDevelopment[0].click();
   await page.waitForTimeout(1000);
 
   scrollToElement(page, '#mui-21');
