@@ -63,8 +63,21 @@ async function fillOutStartWebsiteProjectForm() {
   });
 
   //Print message to console if form was submitted or not
-  if (firstNameInvalid || lastNameInvalid || emailInvalid || phoneInvalid || descriptionInvalid || dropdownEmpty)
+  if (firstNameInvalid || lastNameInvalid || emailInvalid || phoneInvalid || descriptionInvalid || dropdownEmpty) {
     console.log("Error: form did not submit.");
+    if (firstNameInvalid)
+      console.log('First name missing.');
+    if (lastNameInvalid)
+      console.log('Last name missing.');
+    if (emailInvalid)
+      console.log('Email missing.');
+    if (phoneInvalid)
+      console.log('Phone number missing.');
+    if (dropdownEmpty)
+      console.log('No budget option selected.');
+    if (descriptionInvalid)
+      console.log('Website description missing.');
+  }
   else
     console.log("Form successfully submitted.");
 
