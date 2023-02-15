@@ -23,20 +23,21 @@ async function fillOutStartWebsiteProjectForm() {
   await startWebsiteButton[3].click();
   await page.waitForTimeout(3000);
 
-  await page.type('#mui-17', 'Lali');
-  await page.type('#mui-18', 'Martinez');
-  await page.type('#mui-19', 'lali@hi.com');
-  await page.type('#mui-20', '8286371937')
+  await page.type('#mui-20', 'Lali');
+  await page.type('#mui-21', 'Martinez');
+  await page.type('#mui-22', 'lali@hi.com');
+  await page.type('#mui-23', '8286371937')
 
-  const helpWithdropdown = await page.$x('//*[@id="mui-component-select-solutions"]');
-  await helpWithdropdown[3].click();
+  const budgetDropdown = await page.$x('//*[@id="mui-component-select-estimated_website_project_budget"]');
+  await budgetDropdown[3].click();
   await page.waitForTimeout(1000);
-  const selectWebDevelopment = await page.$x('//*[@id="menu-solutions"]/div[3]/ul/li[1]');
-  await selectWebDevelopment[0].click();
+  const selectBudget = await page.$x('//*[@id="menu-estimated_website_project_budget"]/div[3]/ul/li[1]');
+  await selectBudget[0].click();
   await page.waitForTimeout(1000);
 
-  scrollToElement(page, '#mui-21');
-  await page.type('#mui-21', 'This is a description of the website.')
+  scrollToElement(page, '#mui-24');
+  await page.type('#mui-24', 'This is a description of the website.');
+  await page.type('#mui-25', 'From a friend.');
   await page.waitForTimeout(2000);
 
   await page.screenshot({ path: 'schedule_call_form.png', fullPage: true });
