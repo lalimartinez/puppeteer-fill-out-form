@@ -64,7 +64,7 @@ async function fillOutStartWebsiteProjectForm() {
 
   //Print message to console if form was submitted or not
   if (firstNameInvalid || lastNameInvalid || emailInvalid || phoneInvalid || descriptionInvalid || dropdownEmpty) {
-    console.log("Error: form did not submit.");
+    console.log("Error: form did not submit due to empty required input fields.");
     if (firstNameInvalid)
       console.log('First name missing.');
     if (lastNameInvalid)
@@ -77,9 +77,8 @@ async function fillOutStartWebsiteProjectForm() {
       console.log('No budget option selected.');
     if (descriptionInvalid)
       console.log('Website description missing.');
-  }
-  else
-    console.log("Form successfully submitted.");
+  } else {
+      console.log("Form successfully submitted."); }
 
   await page.screenshot({ path: 'schedule_call_form.png', fullPage: true });
   await browser.close();
